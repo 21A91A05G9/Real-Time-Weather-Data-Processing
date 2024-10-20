@@ -1,19 +1,18 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import connectDB from "./config/db.js"; 
+import weatherRoutes from './routes/weather.js';
+
+dotenv.config();
+
 const app = express();
-require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error(err));
+connectDB();
 
-// Define routes
-const weatherRoutes = require('./routes/weather');
 app.use('/api/weather', weatherRoutes);
 
 const PORT = process.env.PORT || 5000;
