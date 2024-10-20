@@ -1,5 +1,5 @@
-const express = require('express');
-const WeatherSummary = require('../models/WeatherSummary');
+import express from 'express';
+import WeatherSummary from '../models/weatherSummary'; 
 
 const router = express.Router();
 
@@ -13,4 +13,4 @@ router.get('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

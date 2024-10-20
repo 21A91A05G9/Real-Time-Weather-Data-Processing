@@ -1,7 +1,8 @@
-const axios = require('axios');
-const Kafka = require('kafka-node');
-require('dotenv').config();
+import axios from 'axios';
+import { Kafka } from 'kafka-node';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const Producer = Kafka.Producer;
 const client = new Kafka.KafkaClient({ kafkaHost: process.env.KAFKA_HOST });
 const producer = new Producer(client);

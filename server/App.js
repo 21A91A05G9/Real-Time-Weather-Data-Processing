@@ -1,14 +1,15 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-
-
+import express from 'express';
+import mongoose from 'mongoose';
+import weatherRoutes from './routes/waether'; 
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 
 // Middleware
 app.use(express.json());
 
-
+// Routes
+app.use('/api/weather', weatherRoutes);
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
