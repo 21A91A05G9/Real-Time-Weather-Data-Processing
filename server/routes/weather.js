@@ -1,9 +1,14 @@
 import express from 'express';
-import { updateWeatherData } from '../controllers/weatherController.js';
+import { getWeatherData } from '../controllers/weatherController.js';
+import { getForecastData } from '../controllers/forecastController.js';
+
 
 const router = express.Router();
 
-// Endpoint to manually trigger data update
-router.get('/update', updateWeatherData);
+// Route to get weather data
+router.get('/', getWeatherData);
+
+// Route to get forecast data
+router.get('/forecast', getForecastData);
 
 export default router;

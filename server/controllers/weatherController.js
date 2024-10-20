@@ -1,15 +1,30 @@
-import { fetchWeatherData } from '../services/weatherService.js';
+import axios from 'axios';
 
-const cities = ['Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Kolkata', 'Hyderabad'];
+const OPENWEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
 
-const updateWeatherData = async () => {
-    for (const city of cities) {
-        const data = await fetchWeatherData(city);
-        const temp = data.main.temp - 273.15; // Convert from Kelvin to Celsius
-        const weatherCondition = data.weather[0].main;
+// Function to fetch weather data for a specific city
+export const getWeatherData = async (req, res) => {
+  const { city } = req.query; // Get the city from query parameters
+  
+  if (!city) {
+    return res.status(400).json({ message: 'City name is required' });
+  }
+  
+  try {
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}&units=metric`);
+    
+    const weatherData = {
+      city: response.data.name,
+      avgTemperature: response.data.main.temp,
+      maxTemperature: response.data.main.temp_max,
+      minTemperature: response.data.main.temp_min,
+      dominantWeather: response.data.weather[0].description,
+      date: response.data.dt * 1000, // Convert to milliseconds
+    };
 
-        // Logic to save or update the weather data in MongoDB...
-    }
+    res.json(weatherData);
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    res.status(500).json({ message: 'Error fetching weather data' });
+  }
 };
-
-export { updateWeatherData };
