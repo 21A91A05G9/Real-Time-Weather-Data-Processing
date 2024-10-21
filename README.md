@@ -26,7 +26,6 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
 - Frontend: React.js
 - Backend: Node.js, Express.js
 - Database: MongoDB
-- Testing: Jest or Mocha/Chai
 
 ## Project Structure
       Rule-Engine-With-AST/
@@ -52,7 +51,7 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
 ### Frontend Setup
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/21A91A05G9/Real-Time-Weather-Data-Processing.git
    cd Rule-Engine-With-AST
 
 2. **Navigate to the Frontend Directory**
