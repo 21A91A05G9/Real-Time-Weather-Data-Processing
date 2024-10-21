@@ -7,108 +7,198 @@ body {
   color: #333;
 }
 
+/* App.css */
+
+/* Container styles */
 .weather-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between items */
+  max-width: 1200px; /* Adjust max width if needed */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f8ff;
   border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Title and form styles */
 .title {
-  text-align: center;
-  color: #007BFF;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a90e2;
 }
 
 .search-form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .city-input {
-  width: 70%;
-  padding: 0.5rem;
-  border: 1px solid #007BFF;
+  padding: 10px;
+  font-size: 1rem;
+  width: 60%;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 0.5rem;
-  transition: border-color 0.3s;
-}
-
-.city-input:focus {
-  border-color: #0056b3;
-  outline: none;
 }
 
 .search-button {
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #4a90e2;
+  color: white;
   border: none;
   border-radius: 5px;
-  background-color: #007BFF;
-  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #357ab6;
 }
 
-.weather-item, .forecast-item {
-  margin-bottom: 1rem;
-  padding: 1rem;
+/* Temperature unit selector styles */
+.unit-selector {
+  margin-bottom: 20px;
+}
+
+.unit-dropdown {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #e9f5ff;
+  cursor: pointer;
 }
 
-.weather-city {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+/* Alert settings input styles */
+.alert-settings {
+  margin-bottom: 20px;
 }
 
-.weather-indicator, .forecast-indicator {
+.threshold-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.threshold-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Alert message styles */
+.alert-message {
+  background-color: #ffef96;
+  color: #b32d00;
   font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #e0a800;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.no-data {
-  text-align: center;
-  color: #ff0000;
+/* Weather and forecast item styles */
+.weather-item, .forecast-item {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #e6f7ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.forecast {
-  margin-top: 2rem;
-}
-
-h2 {
-  text-align: center;
-  color: #007BFF;
-}
-
-
 
 .temperature-table {
   width: 100%;
+  margin-bottom: 15px;
   border-collapse: collapse;
-  margin: 1rem 0;
 }
 
 .temperature-table th, .temperature-table td {
-  border: 1px solid #007BFF;
-  padding: 0.5rem;
-  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.temperature-table th {
-  background-color: #007BFF;
-  color: white;
+.weather-city {
+  font-size: 1.8rem;
+  color: #4a90e2;
+  margin-bottom: 10px;
 }
-
 
 .weather-indicator, .forecast-indicator {
-  text-align: center;
-  font-size: 1.5rem;  
-  margin: 1rem 0;    
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.forecast h2 {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  color: #4a90e2;
+}
+
+/* No data available message */
+.no-data {
+  font-size: 1.2rem;
+  color: #ff6b6b;
 }
 
 
+/* App.css */
+
+/* Settings container styling */
+.settings-container {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for settings */
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+/* Each setting item */
+.settings-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styles */
+.settings-item label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input styles */
+.threshold-input, .unit-dropdown {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Input focus styles */
+.threshold-input:focus, .unit-dropdown:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+.weather-data {
+  flex: 1; /* Take up remaining space */
+  margin-right: 20px; /* Space between weather data and settings */
+}
+
+.settings-container {
+  width: 300px; /* Fixed width for settings */
+}
+/* Grid layout for settings */
+.settings-grid {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  gap: 20px; /* Add space between items */
+  padding: 20px;
+}
