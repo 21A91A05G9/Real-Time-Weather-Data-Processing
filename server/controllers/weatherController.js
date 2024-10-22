@@ -19,7 +19,9 @@ export const getWeatherData = async (req, res) => {
       maxTemperature: response.data.main.temp_max,
       minTemperature: response.data.main.temp_min,
       dominantWeather: response.data.weather[0].description,
-      date: response.data.dt * 1000, // Convert to milliseconds
+      humidity: response.data.main.humidity,        
+      windSpeed: response.data.wind.speed,         
+      date: response.data.dt * 1000,                
     };
 
     res.json(weatherData);

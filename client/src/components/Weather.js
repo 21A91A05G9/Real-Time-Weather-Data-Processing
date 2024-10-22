@@ -77,7 +77,7 @@ const Weather = () => {
     <div className="weather-container">
       <div className="weather-data">
         <h1 className="title">Weather Monitoring System</h1>
-  
+
         <form onSubmit={handleCitySearch} className="search-form">
           <input
             type="text"
@@ -88,19 +88,21 @@ const Weather = () => {
           />
           <button type="submit" className="search-button">Search</button>
         </form>
-  
+
         {/* Alert Message */}
         {alertMessage && <div className="alert-message">{alertMessage}</div>}
-  
+
         {weatherData ? (
           <div className="weather-item">
-            <h3 className="weather-city">{weatherData.city}</h3>
-            <table className="temperature-table">
+            <h3 className="weather-city">{weatherData.city} Weather Forecast</h3>
+            <table className="temperature-table" >
               <thead>
                 <tr>
                   <th>Average Temp</th>
                   <th>Max Temp</th>
                   <th>Min Temp</th>
+                  <th>Humidity</th>
+                  <th>Wind Speed</th>
                 </tr>
               </thead>
               <tbody>
@@ -108,6 +110,8 @@ const Weather = () => {
                   <td>{convertTemperature(weatherData.avgTemperature)}</td>
                   <td>{convertTemperature(weatherData.maxTemperature)}</td>
                   <td>{convertTemperature(weatherData.minTemperature)}</td>
+                  <td>{`${weatherData.humidity}%`}</td>
+                  <td>{`${weatherData.windSpeed} km/h`}</td>
                 </tr>
               </tbody>
             </table>
@@ -117,7 +121,7 @@ const Weather = () => {
           <p className="no-data">No weather data available</p>
         )}
       </div>
-  
+
       {/* Weather Settings */}
       <div className="settings-container">
         <h2>Weather Settings</h2>

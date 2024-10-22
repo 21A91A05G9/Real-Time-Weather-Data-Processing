@@ -117,6 +117,7 @@ body {
 .temperature-table th, .temperature-table td {
   padding: 10px;
   border: 1px solid #ddd;
+  text-align: center;
 }
 
 .weather-city {
@@ -128,6 +129,7 @@ body {
 .weather-indicator, .forecast-indicator {
   font-size: 1.5rem;
   margin-top: 10px;
+  text-align: center;
 }
 
 .forecast h2 {
@@ -202,3 +204,4 @@ body {
   gap: 20px; /* Add space between items */
   padding: 20px;
 }
+
