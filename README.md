@@ -92,6 +92,29 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
 - Daily Summaries: Review daily weather summaries, including average, maximum, and minimum temperatures, along with the dominant weather condition.
 - Alerts: Configure thresholds for temperature or specific weather conditions. Alerts will trigger based on the defined criteria.
 
+## API Endpoints
+1. Fetch weather forecast
+- Endpoint: POST /api/weather?city=${city}&units=${unit}
+- Description: Create a new rule and store it in the database.
+- Request Body
+  ```bash
+  {
+  "city" : Hyderabad,
+  "unit" : metric
+  }
+- Response
+  ```bash
+  {
+  "city":"Hyderabad",
+  "avgTemperature":28.23,
+  "maxTemperature":28.23,
+  "minTemperature":23.73,
+  "dominantWeather":"light rain",
+  "humidity":74,
+  "windSpeed":3.6,"
+  date":1729593790000
+  }
+
 ## Bonus Features
 - Extended Weather Parameters: Support additional parameters from the OpenWeatherMap API (e.g., humidity, wind speed) in rollups and aggregates.
 - Weather Forecasts: Retrieve and summarize weather forecasts based on predicted conditions.
