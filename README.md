@@ -94,8 +94,8 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
 
 ## API Endpoints
 1. Fetch weather forecast
-- Endpoint: POST /api/weather?city=${city}&units=${unit}
-- Description: Create a new rule and store it in the database.
+- Endpoint: GET /api/weather?city=${city}&units=${unit}
+- Description: Fetching data from the openweathermap.org
 - Request Body
   ```bash
   {
