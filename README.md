@@ -69,7 +69,7 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
 ### Backend Setup
 1. **Navigate to the Backend Directory**
    ```bash
-   cd ../backend
+   cd ../server
 
 2. **Install Dependencies**
    ```bash
