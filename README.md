@@ -114,6 +114,8 @@ The system utilizes the OpenWeatherMap API, which provides various weather param
   "windSpeed":3.6,"
   date":1729593790000
   }
+![image](https://github.com/user-attachments/assets/17247350-372d-4cb1-8baa-8f132ed4305e)
+
 
 ## Bonus Features
 - Extended Weather Parameters: Support additional parameters from the OpenWeatherMap API (e.g., humidity, wind speed) in rollups and aggregates.
